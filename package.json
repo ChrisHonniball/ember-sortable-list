@@ -1,6 +1,6 @@
 {
   "name": "ember-sortable-list",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "Ember CLI addon component to add a jQuery UI sortable list to your templates.",
   "directories": {
     "doc": "doc",
