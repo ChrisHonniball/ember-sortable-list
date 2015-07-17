@@ -68,26 +68,39 @@
 
 <div class="col-lg-10 col-lg-offset-1 col-md-12">
   <h2>Examples</h2>
-
+  
   <div class="col-md-6 col-sm-12">
-    <h3>Standard Mark-up</h3>
-<pre>&lt;ul&gt;
-  &lt;li&gt;Some Item 1&lt;/li&gt;
-  &lt;li&gt;Some Item 2&lt;/li&gt;
-  &lt;li&gt;Some Item 3&lt;/li&gt;
-  &lt;li&gt;Some Item 4&lt;/li&gt;
-&lt;/ul&gt;</pre>
+    <h3>Working Component</h3>
+    
+    {{#ember-sortable-list
+      class="list-group"
+      stop=(action 'sortStop')
+      as |component|
+    }}
+      {{#each model as |item|}}
+        <li class="list-group-item" data-model-id={{item.id}}>
+          {{item.label}}
+        </li>
+      {{/each}}
+    {{/ember-sortable-list}}  
   </div>
   
   <div class="col-md-6 col-sm-12">
     <h3>Component Mark-up</h3>
-<pre>\{{#ember-sortable-list}}
-  &lt;li&gt;Some Item 1&lt;/li&gt;
-  &lt;li&gt;Some Item 2&lt;/li&gt;
-  &lt;li&gt;Some Item 3&lt;/li&gt;
-  &lt;li&gt;Some Item 4&lt;/li&gt;
+<pre>\{{#ember-sortable-list
+  class="list-group"
+  stop=(action 'sortStop')
+  as |component|
+}}
+  \{{#each model as |item|}}
+    &lt;li class="list-group-item" data-model-id=\{{item.id}}&gt;
+      \{{item.label}}
+    &lt;/li&gt;
+  \{{/each}}
 \{{/ember-sortable-list}}</pre>
   </div>
+  
+  <div class="clearfix"></div>
   
 </div>
 
